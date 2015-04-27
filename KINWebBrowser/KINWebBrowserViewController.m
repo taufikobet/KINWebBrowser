@@ -417,6 +417,8 @@ static void *KINContext = &KINContext;
         TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
         ARChromeActivity *chromeActivity = [[ARChromeActivity alloc] init];
         UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[URLForActivityItem] applicationActivities:@[safariActivity, chromeActivity]];
+        [controller.view setTintColor:[UIColor whiteColor]];
+        
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             if(self.actionPopoverController) {
                 [self.actionPopoverController dismissPopoverAnimated:YES];
