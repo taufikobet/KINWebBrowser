@@ -156,6 +156,11 @@ static void *KINContext = &KINContext;
     [self.navigationController.navigationBar addSubview:self.progressView];
     
     [self updateToolbarState];
+    
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithHue:0.566 saturation:0.762 brightness:0.858 alpha:1];
+    NSDictionary *textTitleOptions = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:textTitleOptions];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
