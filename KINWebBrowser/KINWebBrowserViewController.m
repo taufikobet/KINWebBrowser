@@ -427,7 +427,9 @@ static void *KINContext = &KINContext;
             [self.actionPopoverController presentPopoverFromBarButtonItem:self.actionButton permittedArrowDirections: UIPopoverArrowDirectionAny animated:YES];
         }
         else {
-            [self presentViewController:controller animated:YES completion:NULL];
+            [self presentViewController:controller animated:YES completion:^{
+                [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
+            }];
         }
     });
 }
