@@ -417,7 +417,6 @@ static void *KINContext = &KINContext;
         TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
         ARChromeActivity *chromeActivity = [[ARChromeActivity alloc] init];
         UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[URLForActivityItem] applicationActivities:@[safariActivity, chromeActivity]];
-        [controller.view setTintColor:[UIColor whiteColor]];
         
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             if(self.actionPopoverController) {
@@ -429,6 +428,8 @@ static void *KINContext = &KINContext;
         else {
             [self presentViewController:controller animated:YES completion:^{
                 [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
+                NSDictionary *textTitleOptions = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], UITextAttributeTextColor, nil];
+                [[UINavigationBar appearance] setTitleTextAttributes:textTitleOptions];
             }];
         }
     });
